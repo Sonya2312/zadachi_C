@@ -1,17 +1,17 @@
 #include <stdio.h>
 int factr(int n);
 int main(){
-int n;
+int x;
 int a;
-printf("Пожалуйста, введите число N>0:\n");
-scanf("%d", &n);
-a=factr(n);
-printf("Факториал = %d\n", a);
+printf("Пожалуйста, введите число N>0:\x");
+scanf("%d", &x);
+a=factr(x);
+printf("Факториал = %d\x", a);
 return 0;
 }
-int factr(int n){
+int factr(int x){
 int answer;
-if(n==1) return(1);
-answer = factr(n-1)*n;
+if(x==1) return(1);
+answer = factr(x-1)*x;
 return(answer);
 }
