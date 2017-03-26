@@ -3,10 +3,10 @@ int factr(int n);
 int main(){
 int x;
 int a;
-printf("Пожалуйста, введите число N>0:\x");
+printf("Пожалуйста, введите число N>0:\n");
 scanf("%d", &x);
 a=factr(x);
-printf("Факториал = %d\x", a);
+printf("Факториал = %d\n", a);
 return 0;
 }
 int factr(int x){
