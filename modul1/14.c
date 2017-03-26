@@ -1,40 +1,31 @@
-    #include <stdio.h>
-    #define MAX 1000
+   #include <stdio.h>
+#include <string.h>
+char reverse(char *c)
+{
+	int n = 0, i, m;
+	char mas[1000];
+	m = strlen(c);
+	for (i = m - 1; i >= 0; --i)
+	{
+		mas[n] = c[i];
+		n++;
+	}
+	for (i = 0; c[i] != '\0'; ++i)
+	{
+		c[i] = mas[i];
+	}
+	return *c;
+}
+void main(void)
+{
+	int i;
+	char mas[1000];
+	gets(mas);
+	reverse(mas);
+	for (i = 0; mas[i] != '\0'; ++i)
+	{
+		printf("%c", mas[i]);
 
-    void reverse(char s[], int n);
-    int main(int argc, char **argv)
-    {
-
-    char line[MAX];
-    int i, m;
-    char c;
-    i=0;
-    while((c=getchar()) != EOF)
-    {
-    line[i]=c;
-    i++;
-    if(c=='\n')
-    {
-    line[i]='\0';
-    m=i;
-    i=0;
-    reverse(line, m);
-    printf("%s\n", line);
-    }
-    }
-    return 0;
-    }
-
-    void reverse(char s[], int n)
-    {
-    char tmp[MAX];
-    int i, j;
-    for(i=0; i<n; i++)
-    tmp[i]=s[i];
-    i-=2;
-    for(j=0; j<(n-1); j++, i--)
-    s[j]=tmp[i];
-    }
-
-
-
+	}
+printf("\n");
+}
