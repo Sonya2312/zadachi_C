@@ -1,41 +1,52 @@
     #include <stdio.h>
-    #include <math.h>
 
-    int main() {
-    float a,b,c;
-    c=b/100;
-    char sign='+';
-    while (sign != '0') {
-    printf("Пожалуйста, введите символ желаемой операции: ");
-    scanf("%c%*c", &sign);
-    if (sign == '0') { break; }
-    if (sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '%' || sign == '^') {
-    printf("Первое число=");
-    scanf("%f%*c", &a);
-    printf("Второе число равно=");
-    scanf("%f%*c", &b);
-    switch (sign) {
-    case '+':
-    printf("%.2f\n", a+b);
-    break;
-    case '-':
-    printf("%.2f\n", a-b);
-    break;
-    case '*':
-    printf("%.2f\n", a*b);
-    break;
-    case '/':
-    if (b != 0) printf("%.2f\n", a/b);
-    else printf("Деление на ноль!\n");
-    case '%':
-    printf("%.2f\n", a/c);
-    case '^':
-    printf("powf :%.2f\n", powf (a, b) );
-    }
-    }
-    else printf("Неверно указан знак операции\n");
-    }
-    }
-  
+int main()
+{
+float x, a, b, d;
+char c;
+int i;
+printf("Пожалуйста, введите числа и операцию\n");
+scanf("%f%c%f", &a, &c, &b);
+switch (c)
+{
+case '+':
+d = a + b;
+break;
+case '-':
+d = a - b;
+break;
+case '*':
+d = a * b;
+break;
+case '/':
+if (b == 0)
+{
+printf("На ноль делить нельзя!");
+}
+else
+{
+d = a / b;
+}
+break;
+case '^':
+x = a;
+if (b != 0)
+{
+for ( i = 1; i < b; i++)
+{
+a *= x;
+}
+d = a;
+break;
+}
+else
+d = 1;
+break;
+case '%':
+d = 0.01*a*b;
+}
+printf("%f\n\n", d);
+return 0;
+}
 
    
