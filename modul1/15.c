@@ -1,52 +1,22 @@
  
-         #include <stdio.h>
-    #include <locale.h>
+  #include <stdio.h>
+#include <string.h>
 
-    int main()
-    {
-    setlocale(0, "russian");
+void main(void)
+{
 
-    int count = 0, a = 0, index = 0, b = 0 ;
-    int c;
-    char sis[100], sos[100];
-    for (b = 0; b < 100; b++)
-    {
-    sis[b] = '\0';
-    }
-    for (b = 0; b < 100; b++)
-    {
-    sos[b] = '\0';
-    }
-    printf("Введите вашу строку: ");
-    gets(sos);
+	int i, j = 0;
+	char b[100], c[100];
+	gets(b);
+	c[0] = b[0];
+	for (i = 0; b[i] != '\0'; i++)
+	{
+		if (c[j - 1] != b[i]) {
+			c[j] = b[i];
+			printf("%c", c[j]);
+			j++;
+		}
+	}	
+	printf ("\n");
 
-    while (a < 100)
-    {
-    if (sos[a + 1] == sos[a] && sos[a+1] != '\0')
-    {
-    for (c = a ; c < 100; c++)
-    {
-    if (sos[c] != sos[c + 1])
-    {
-    break;
-    }
-    else count++;
-    }
-    a = a + count;
-
-    }
-    else
-    {
-    sis[index] = sos[a];
-    index++;
-    }
-    a++;
-    count = 0;
-    }
-
-    printf("Уважаемый, Влад, это ваша новая строчка: %s", sis);
-    return 0;
-    }
-
-
-
+}
