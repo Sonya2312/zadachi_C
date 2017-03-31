@@ -1,30 +1,24 @@
-    #include <stdio.h>
+   #include <stdio.h> 
+#include <stdlib.h> 
 
-int main()
-{
-char sonya[100];
-int vlad = 0;
+int main(void) 
+{ 
+char str[30]; 
+int i; 
+int big = 0; 
 
-gets(sonya);
-for (int i = 0; i < 100; i++)
-{
-if ( (sonya[i] == ' ') || (sonya[i] == '\0') )
-{
-for (int c = 0; c < vlad; c++)
-printf("-");
-printf("\n");
-for (int c = 0; c < vlad - 1; c++)
-printf(" ");
-printf("|\n");
-for (int c = 0; c < vlad; c++)
-printf("-");
-printf("\n");
-vlad = 0;
+while (1) 
+{ 
+printf("Input str. If you want to finish - input \"exit\":\n"); 
+scanf("%s", str); 
+
+if (str[0] == 'e' && str[1] == 'x' && str[2] == 'i' && str[3] == 't') 
+break; 
+
+for (i = 0; str[i] != 0; i++) 
+printf("##"); 
+printf("\n"); 
+} 
+system("pause"); 
 }
-else
-vlad++;
-if (sonya[i] == '\0')
-break;
-}
-return 0;
-}
+
