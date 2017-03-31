@@ -1,40 +1,33 @@
-#include <stdio.h>
-#include <locale.h>
+#include <stdio.h> 
+#include <stdlib.h> 
 
+double Func(double *a, int len) 
+{ 
+int i; 
+double small = a[0]; 
+double big = a[0]; 
 
-double binom(double * mas, int a)
-{
-	double b, c;
-	int i;
-	b = mas[0];
-	for (i = 0; i < a; i++)
-	{
-		if (b < mas[i])
-			b = mas[i];
-	}
-	c = mas[0];
-	for (i = 0; i < a; i++)
-	{
-		if (c > mas[i])
-			c = mas[i];
-	}
-	return b - c;
+for (i = 0; i < len; i++) 
+{ 
+if (a[i] >= big) 
+big = a[i]; 
+if (a[i] <= small) 
+small = a[i]; 
+} 
+
+return big - small; 
+} 
+
+int main(void) 
+{ 
+double arr[5] = {3, 2, 1.5, 0.5, 5}; 
+int i; 
+
+printf("Tvoi massiv:"); 
+for (i = 0; i < 5; i++) 
+printf("%lf ", arr[i]); 
+printf("\n"); 
+printf("Otvet: %lf\n", Func(arr, 5)); 
+
+system("pause"); 
 }
-
-int main()
-{
-	setlocale(0, "russian");
-	int a, i;
-	double d;
-	printf("Пожалуйста, введите количество символов в массиве: ");
-	scanf("%i", &a);
-	double * mas = (double *)malloc(a*8);
-	printf("Пожалуйста, введите массив: ");
-	for (i = 0; i < a; i++)
-		scanf("%lf", &mas[i]);
-	d = binom(mas, a);
-	printf("Разность между наибольшим и наименьшим значениями: %lf\n", d);
-	free(mas);
-	return 0;
-}
-
