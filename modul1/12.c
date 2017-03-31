@@ -1,24 +1,20 @@
-#include <stdio.h>
-#include <locale.h>
+#include <stdio.h> 
+#include <stdlib.h> 
 
-int main()
-{
-int i;
-char sonya[100];
-for (i = 0; i< 100; i++)
-sonya[i] = '\0';
-printf("Пожалуйста, введите строчку :");
-gets(sonya);
-char c;
-c = sonya[0];
-for (i = 0; i < 100; i++)
-{
-if (c < sonya[i])
-{
-c = sonya[i];
-}
-}
-printf("Наибольший ASCII код у символа %c\n", c);
+int main(void) 
+{ 
+char str[30]; 
+int i; 
+int big = 0; 
 
-return 0;
+printf("Input str:\n"); 
+scanf("%s", str); 
+
+for (i = 0; str[i] != 0; i++) 
+if (str[i] >= str[big]) 
+big = i; 
+
+printf("Otvet: %c\n", str[big]); 
+
+system("pause"); 
 }
